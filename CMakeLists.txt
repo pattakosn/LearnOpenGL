@@ -1,7 +1,12 @@
 cmake_minimum_required (VERSION 3.10 FATAL_ERROR)
 cmake_policy(VERSION 3.10)
 
-project(LearnOpenGL)
+project(LearnOpenGL
+	LANGUAGES C CXX
+	VERSION 1.0.0
+	DESCRIPTION "The best OpenGL learning material on the planet by Joey de Vries"
+	HOMEPAGE_URL "https://learnopengl.com/"
+)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
