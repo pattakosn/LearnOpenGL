@@ -521,6 +521,8 @@ unsigned int loadTexture(char const * path, bool gammaCorrection)
             internalFormat = gammaCorrection ? GL_SRGB_ALPHA : GL_RGBA;
             dataFormat = GL_RGBA;
         }
+        else
+            throw std::runtime_error("textures are required to havve 1,3 or 4 components\n");
 
         glBindTexture(GL_TEXTURE_2D, textureID);
         glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, width, height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
