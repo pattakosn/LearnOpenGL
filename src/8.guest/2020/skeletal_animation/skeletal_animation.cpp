@@ -125,7 +125,7 @@ int main()
 		ourShader.setMat4("view", view);
 
         auto transforms = animator.GetFinalBoneMatrices();
-		for (int i = 0; i < transforms.size(); ++i)
+		for (auto i = 0u; i < transforms.size(); ++i)
 			ourShader.setMat4("finalBonesMatrices[" + std::to_string(i) + "]", transforms[i]);
 
 

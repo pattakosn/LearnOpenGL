@@ -171,7 +171,7 @@ private:
 		auto& boneInfoMap = m_BoneInfoMap;
 		int& boneCount = m_BoneCounter;
 
-		for (int boneIndex = 0; boneIndex < mesh->mNumBones; ++boneIndex)
+		for (auto boneIndex = 0u; boneIndex < mesh->mNumBones; ++boneIndex)
 		{
 			int boneID = -1;
 			std::string boneName = mesh->mBones[boneIndex]->mName.C_Str();
@@ -196,7 +196,7 @@ private:
 			{
 				int vertexId = weights[weightIndex].mVertexId;
 				float weight = weights[weightIndex].mWeight;
-				assert(vertexId <= vertices.size());
+				assert(static_cast<size_t>(vertexId) <= vertices.size());
 				SetVertexBoneData(vertices[vertexId], boneID, weight);
 			}
 		}

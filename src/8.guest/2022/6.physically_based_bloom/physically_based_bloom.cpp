@@ -231,10 +231,10 @@ void BloomRenderer::RenderDownsamples(unsigned int srcTexture)
 	glBindTexture(GL_TEXTURE_2D, srcTexture);
 
 	// Progressively downsample through the mip chain
-	for (int i = 0; i < (int)mipChain.size(); i++)
+	for (auto i = 0u; i < mipChain.size(); i++)
 	{
 		const bloomMip& mip = mipChain[i];
-		glViewport(0, 0, mip.size.x, mip.size.y);
+		glViewport(0, 0, (int)mip.size.x, (int)mip.size.y);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
 		                       GL_TEXTURE_2D, mip.texture, 0);
 
@@ -274,7 +274,7 @@ void BloomRenderer::RenderUpsamples(float filterRadius)
 		glBindTexture(GL_TEXTURE_2D, mip.texture);
 
 		// Set framebuffer render target (we write to this texture)
-		glViewport(0, 0, nextMip.size.x, nextMip.size.y);
+		glViewport(0, 0, (int)nextMip.size.x, (int)nextMip.size.y);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
 		                       GL_TEXTURE_2D, nextMip.texture, 0);
 

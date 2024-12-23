@@ -112,7 +112,7 @@ void configureAreaLights()
 	// CONFIGURE AREA LIGHTS
 	std::uniform_real_distribution<GLfloat> random_floats(0.0f, 1.0f);
 	typedef std::chrono::high_resolution_clock myclock;
-	unsigned seed = myclock::now().time_since_epoch().count();
+	unsigned seed = (unsigned)myclock::now().time_since_epoch().count();
 	std::default_random_engine generator(seed);
 	std::function<float(void)> fn =
 		[&random_floats, &generator]{ return random_floats(generator); };

@@ -124,11 +124,11 @@ int main()
     stbi_image_free(data);
 
     std::vector<unsigned> indices;
-    for(unsigned i = 0; i < height-1; i += rez)
+    for(int i = 0; i < height-1; i += rez)
     {
-        for(unsigned j = 0; j < width; j += rez)
+        for(int j = 0; j < width; j += rez)
         {
-            for(unsigned k = 0; k < 2; k++)
+            for(int k = 0; k < 2; k++)
             {
                 indices.push_back(j + width * (i + k*rez));
             }
@@ -195,7 +195,7 @@ int main()
         // render the cube
         glBindVertexArray(terrainVAO);
 //        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        for(unsigned strip = 0; strip < numStrips; strip++)
+        for(int strip = 0; strip < numStrips; strip++)
         {
             glDrawElements(GL_TRIANGLE_STRIP,   // primitive type
                            numTrisPerStrip+2,   // number of indices to render

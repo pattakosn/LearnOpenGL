@@ -260,7 +260,7 @@ int main()
         shader.setVec3("viewPos", camera.Position);
         shader.setVec3("lightDir", lightDir);
         shader.setFloat("farPlane", cameraFarPlane);
-        shader.setInt("cascadeCount", shadowCascadeLevels.size());
+        shader.setInt("cascadeCount", (int)shadowCascadeLevels.size());
         for (size_t i = 0; i < shadowCascadeLevels.size(); ++i)
         {
             shader.setFloat("cascadePlaneDistances[" + std::to_string(i) + "]", shadowCascadeLevels[i]);
@@ -479,7 +479,7 @@ void drawCascadeVolumeVisualizers(const std::vector<glm::mat4>& lightMatrices, S
         {0.0, 0.0, 1.0, 0.5f},
     };
 
-    for (int i = 0; i < lightMatrices.size(); ++i)
+    for (auto i = 0u; i < lightMatrices.size(); ++i)
     {
         const auto corners = getFrustumCornersWorldSpace(lightMatrices[i]);
         std::vector<glm::vec3> vec3s;
@@ -548,7 +548,7 @@ void processInput(GLFWwindow *window)
     if (glfwGetKey(window, GLFW_KEY_N) == GLFW_RELEASE && plusPress == GLFW_PRESS)
     {
         debugLayer++;
-        if (debugLayer > shadowCascadeLevels.size())
+        if (static_cast<size_t>(debugLayer) > shadowCascadeLevels.size())
         {
             debugLayer = 0;
         }
