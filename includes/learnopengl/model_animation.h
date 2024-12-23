@@ -166,7 +166,7 @@ private:
 	}
 
 
-	void ExtractBoneWeightForVertices(std::vector<Vertex>& vertices, aiMesh* mesh, const aiScene* scene)
+	void ExtractBoneWeightForVertices(std::vector<Vertex>& vertices, aiMesh* mesh, const aiScene*)
 	{
 		auto& boneInfoMap = m_BoneInfoMap;
 		int& boneCount = m_BoneCounter;
@@ -203,7 +203,7 @@ private:
 	}
 
 
-	unsigned int TextureFromFile(const char* path, const string& directory, bool gamma = false)
+	unsigned int TextureFromFile(const char* path, const string& directory)
 	{
 		string filename = string(path);
 		filename = directory + '/' + filename;
