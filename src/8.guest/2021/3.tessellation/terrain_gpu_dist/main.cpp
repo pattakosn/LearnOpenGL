@@ -256,14 +256,14 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 // ---------------------------------------------------------------------------------------------
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int modifiers)
 {
-    if(action == GLFW_PRESS)
-    {
-        switch(key)
-        {
-            default:
-                break;
-        }
-    }
+    //if(action == GLFW_PRESS)
+    //{
+    //    switch(key)
+    //    {
+    //        default:
+    //            break;
+    //    }
+    //}
 }
 
 // glfw: whenever the mouse moves, this callback is called
