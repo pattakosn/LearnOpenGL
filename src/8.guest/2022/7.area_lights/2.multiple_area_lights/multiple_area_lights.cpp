@@ -429,7 +429,7 @@ int main()
 		shaderLightPlane.use();
 		shaderLightPlane.setMat4("view", view);
 		shaderLightPlane.setMat4("projection", projection);
-		float sinNowTime = glm::sin(currentFrame);
+		//float sinNowTime = glm::sin(currentFrame);
 		for (int i = 0; i < NUM_AREA_LIGHTS; i++)
 		{
 			model = glm::mat4(1.0f);
